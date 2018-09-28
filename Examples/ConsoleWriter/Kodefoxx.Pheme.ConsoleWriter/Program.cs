@@ -29,7 +29,8 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         /// Configure services.
         /// </summary>        
         private static void ConfigureServices(ServiceCollection serviceCollection)
-        {            
+        {
+            // TODO: see https://www.blinkingcaret.com/2018/02/14/net-core-console-logging/
         }
 
         /// <summary>
