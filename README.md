@@ -1,3 +1,6 @@
+
+[![Build status](https://ci.appveyor.com/api/projects/status/8n0dvk1rut8fr68t?svg=true)](https://ci.appveyor.com/project/aredfox/pheme)
+
 # Pheme
 The goal of the project is to create a reusable and extensible toolset which allows for communication/integration to various forums/social chatboxes/social networks and more... Think of slack, MS Teams, Facebook Messenger, Discord, and more...
 
