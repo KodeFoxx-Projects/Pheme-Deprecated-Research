@@ -1,10 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Kodefoxx.Pheme.Slack
 {
     /// <summary>
     /// Represents a slack message.
     /// </summary>
+    [DebuggerDisplay("UserName: \"{UserName}\" | Text: \"{Text}\"")]
     public sealed class SlackMessage
     {
         /// <summary>
@@ -18,5 +20,10 @@ namespace Kodefoxx.Pheme.Slack
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
+
+        /// <inheritdoc cref="object.ToString"/>        
+        public override string ToString()
+            => $"UserName: \"{UserName}\" | Text: \"{Text}\""
+        ;
     }
 }

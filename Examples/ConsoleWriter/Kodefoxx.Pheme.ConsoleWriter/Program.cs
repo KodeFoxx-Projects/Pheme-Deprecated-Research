@@ -6,7 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Kodefoxx.Pheme.ConsoleWriter
@@ -19,8 +21,19 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         /// <param name="args">The command line arguments.</param>
         static void Main(string[] args)
         {
+            var configuration = new ConfigurationBuilder()                    
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddUserSecrets<SlackWebHookClientOptions>()
+                /***** USER SECRETS ********************************************************************
+                 * 1. Stored in "%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json"
+                 * 2. Generate your own via cli command "dotnet user-secrets set YourSecretName "YourSecretContent""                 
+                 * More info on https://stackoverflow.com/a/48666491/1155847
+                 ***************************************************************************************/
+                .Build()
+            ;
+
             var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
+            ConfigureServices(serviceCollection, configuration);
             var serviceProvider = serviceCollection
                 .AddSingleton<Program>()                
                 .BuildServiceProvider()
@@ -33,10 +46,10 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         /// <summary>
         /// Configure services.
         /// </summary>        
-        private static void ConfigureServices(ServiceCollection serviceCollection)
+        private static void ConfigureServices(ServiceCollection serviceCollection, IConfiguration configuration)
             => serviceCollection
                 .AddAndConfigureLogging()
-                .AddAndConfigureSlackTarget(() => new MessageToSlackMessageConverter())
+                .AddAndConfigureSlackTarget(() => new MessageToSlackMessageConverter(), configuration)
         ;
 
         /// <summary>
@@ -71,8 +84,8 @@ namespace Kodefoxx.Pheme.ConsoleWriter
                 Content = "Hello, world!"
             };
 
-            _targets.ToList().ForEach(target 
-                => target.PublishMessage(message)
+            _targets.ToList().ForEach(async target 
+                => await target.PublishMessage(message)
             );
         }
     }

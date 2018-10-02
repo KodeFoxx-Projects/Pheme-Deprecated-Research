@@ -1,8 +1,11 @@
-﻿namespace Kodefoxx.Pheme.Shared.Messages
+﻿using System.Diagnostics;
+
+namespace Kodefoxx.Pheme.Shared.Messages
 {
     /// <summary>
     /// Represents a basic message.
     /// </summary>
+    [DebuggerDisplay("Author: \"{Author}\" | Content: \"{Content}\"")]
     public sealed class Message : IMessage
     {
         /// <summary>
