@@ -44,7 +44,10 @@ namespace Kodefoxx.Pheme.Slack
             _logger.LogInformation($"Publishing message '{targetMessage}'...");
             foreach (var webHookUrl in _slackWebHookClientOptions.WebHookUrls)
             {
-                await _slackWebHookClient.Publish(webHookUrl, JsonConvert.SerializeObject(targetMessage));
+                targetMessage.Channel = webHookUrl.Channel;
+                targetMessage.IconUrl = _slackWebHookClientOptions.IconUrl;
+                targetMessage.UserName = _slackWebHookClientOptions.AppName;
+                await _slackWebHookClient.Publish(webHookUrl.Url, JsonConvert.SerializeObject(targetMessage));
             }            
             _logger.LogInformation($"Published message '{targetMessage}'.");            
         }
