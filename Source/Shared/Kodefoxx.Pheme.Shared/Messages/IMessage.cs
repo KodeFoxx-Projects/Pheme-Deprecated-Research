@@ -3,7 +3,5 @@
     /// <summary>
     /// Defines a message.
     /// </summary>
-    public interface IMessage
-    {
-    }
+    public interface IMessage { }
 }

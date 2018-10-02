@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodefoxx.Pheme.Shared", "Shared\Kodefoxx.Pheme.Shared\Kodefoxx.Pheme.Shared.csproj", "{A0F09E24-B2E0-4254-A957-47A04451E0A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kodefoxx.Pheme.Shared", "Shared\Kodefoxx.Pheme.Shared\Kodefoxx.Pheme.Shared.csproj", "{A0F09E24-B2E0-4254-A957-47A04451E0A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{90A08640-C24F-4A61-92FB-BC027482802A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kodefoxx.Pheme.Shared.Tests", "Shared\Kodefoxx.Pheme.Shared.Tests\Kodefoxx.Pheme.Shared.Tests.csproj", "{A8D6D0A5-1EAA-44C9-892A-F22540429684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodefoxx.Pheme.ConsoleWriter", "..\Examples\ConsoleWriter\Kodefoxx.Pheme.ConsoleWriter\Kodefoxx.Pheme.ConsoleWriter.csproj", "{EBE79D06-6699-4A76-A4E3-10F696731589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kodefoxx.Pheme.ConsoleWriter", "..\Examples\ConsoleWriter\Kodefoxx.Pheme.ConsoleWriter\Kodefoxx.Pheme.ConsoleWriter.csproj", "{EBE79D06-6699-4A76-A4E3-10F696731589}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{5BDA372D-42CE-4BF8-A062-5A9E9C6D639E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{A9C6DF25-708E-4C1A-8F59-4D57BC6E9A0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{A1A0A643-450A-4CE6-9658-BA988BAEBD95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodefoxx.Pheme.Slack", "Implementations\Slack\Kodefoxx.Pheme.Slack\Kodefoxx.Pheme.Slack.csproj", "{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Slack", "Slack", "{E69218F6-6A6E-42E6-8E4A-DAD421B4D60D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,10 @@ Global
 		{EBE79D06-6699-4A76-A4E3-10F696731589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE79D06-6699-4A76-A4E3-10F696731589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBE79D06-6699-4A76-A4E3-10F696731589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +52,9 @@ Global
 		{90A08640-C24F-4A61-92FB-BC027482802A} = {A9C6DF25-708E-4C1A-8F59-4D57BC6E9A0E}
 		{A8D6D0A5-1EAA-44C9-892A-F22540429684} = {90A08640-C24F-4A61-92FB-BC027482802A}
 		{EBE79D06-6699-4A76-A4E3-10F696731589} = {5BDA372D-42CE-4BF8-A062-5A9E9C6D639E}
+		{A1A0A643-450A-4CE6-9658-BA988BAEBD95} = {A9C6DF25-708E-4C1A-8F59-4D57BC6E9A0E}
+		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90} = {E69218F6-6A6E-42E6-8E4A-DAD421B4D60D}
+		{E69218F6-6A6E-42E6-8E4A-DAD421B4D60D} = {A1A0A643-450A-4CE6-9658-BA988BAEBD95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7D0F1A4-673B-4AC3-80E0-B35E56109A73}
