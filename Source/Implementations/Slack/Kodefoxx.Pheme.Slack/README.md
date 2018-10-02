@@ -1,5 +1,6 @@
 **Configuration**
-1. See demo-app at where following extensions are used:
+1. See demo-app at https://github.com/KodeFoxx-Projects/Pheme/blob/master/Examples/ConsoleWriter/Kodefoxx.Pheme.ConsoleWriter/Program.cs where following extensions are used:
+
 *1.1 .ConfigureSlackWebHookClientOptions()* makes sure that `SlackWebHookClientOptions` are loaded from UserSecrets.
 ```
 var configuration = new ConfigurationBuilder()                    
