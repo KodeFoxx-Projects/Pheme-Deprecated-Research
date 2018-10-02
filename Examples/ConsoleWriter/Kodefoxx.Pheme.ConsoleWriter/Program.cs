@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Kodefoxx.Pheme.ConsoleWriter.Infrastructure.ServiceCollection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Kodefoxx.Pheme.ConsoleWriter
 {
     class Program
-    {        
+    {
         /// <summary>
-        /// Entry point for the application,
-        /// Bootstraps it all.
+        /// Bootstrapping / Entry point for the application.        
         /// </summary>
         /// <param name="args">The command line arguments.</param>
         static void Main(string[] args)
@@ -16,10 +17,9 @@ namespace Kodefoxx.Pheme.ConsoleWriter
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection
-                .AddSingleton<Program>()
+                .AddSingleton<Program>()                
                 .BuildServiceProvider()
             ;
-
 
             var program = serviceProvider.GetService<Program>();
             program.Run();
@@ -29,9 +29,9 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         /// Configure services.
         /// </summary>        
         private static void ConfigureServices(ServiceCollection serviceCollection)
-        {
-            // TODO: see https://www.blinkingcaret.com/2018/02/14/net-core-console-logging/
-        }
+            => serviceCollection
+                .AddAndConfigureLogging()                
+        ;
 
         /// <summary>
         /// Holds a reference to the logger instance.
@@ -49,10 +49,6 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         /// <summary>
         /// Runs the example.
         /// </summary>
-        public void Run()
-        {
-            _logger.LogInformation($"Entered {nameof(Run)}");
-            _logger.LogDebug($"Exited {nameof(Run)}");
-        }
+        public void Run() { }
     }
 }
