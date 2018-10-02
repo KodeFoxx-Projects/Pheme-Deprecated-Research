@@ -18,7 +18,7 @@ namespace Kodefoxx.Pheme.Slack
         /// <param name="serviceCollection">The <see cref="IServiceCollection"/> to add and configure slack to.</param>
         /// <param name="messageConverterFactory">The <see cref="IMessageConverter{TMessage,TTargetMessage}"/> to be used.</param>
         /// <param name="configuration">The pre-built configuration.</param>
-        public static IServiceCollection AddAndConfigureSlackTarget<TMessage>(
+        public static IServiceCollection AddAndConfigureSlackWebHookTarget<TMessage>(
             this IServiceCollection serviceCollection, Func<IMessageConverter<TMessage, SlackMessage>> messageConverterFactory, IConfiguration configuration
         ) where TMessage : IMessage
             => serviceCollection

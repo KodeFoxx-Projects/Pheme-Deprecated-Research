@@ -4,12 +4,10 @@ using Kodefoxx.Pheme.Shared.Targets;
 using Kodefoxx.Pheme.Slack;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Serilog;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Kodefoxx.Pheme.ConsoleWriter
 {
@@ -23,12 +21,7 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         {
             var configuration = new ConfigurationBuilder()                    
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddUserSecrets<SlackWebHookClientOptions>()
-                /***** USER SECRETS ********************************************************************
-                 * 1. Stored in "%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json"
-                 * 2. Generate your own via cli command "dotnet user-secrets set YourSecretName "YourSecretContent""                 
-                 * More info on https://stackoverflow.com/a/48666491/1155847
-                 ***************************************************************************************/
+                .ConfigureSlackWebHookClientOptions()                
                 .Build()
             ;
 
@@ -49,7 +42,7 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         private static void ConfigureServices(ServiceCollection serviceCollection, IConfiguration configuration)
             => serviceCollection
                 .AddAndConfigureLogging()
-                .AddAndConfigureSlackTarget(() => new MessageToSlackMessageConverter(), configuration)
+                .AddAndConfigureSlackWebHookTarget(() => new MessageToSlackMessageConverter(), configuration)
         ;
 
         /// <summary>
@@ -81,7 +74,7 @@ namespace Kodefoxx.Pheme.ConsoleWriter
             var message = new Message
             {
                 Author = "Kodefoxx",
-                Content = "Hello, world!"
+                Content = "Hello, world!\n ~ from https://github.com/KodeFoxx-Projects/Pheme"
             };
 
             _targets.ToList().ForEach(async target 
