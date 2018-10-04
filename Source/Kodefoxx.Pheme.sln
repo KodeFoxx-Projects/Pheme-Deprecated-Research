@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{A9C6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{A1A0A643-450A-4CE6-9658-BA988BAEBD95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodefoxx.Pheme.Slack", "Implementations\Slack\Kodefoxx.Pheme.Slack\Kodefoxx.Pheme.Slack.csproj", "{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kodefoxx.Pheme.Slack", "Implementations\Slack\Kodefoxx.Pheme.Slack\Kodefoxx.Pheme.Slack.csproj", "{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Slack", "Slack", "{E69218F6-6A6E-42E6-8E4A-DAD421B4D60D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teams", "Teams", "{2415F7D5-0E0B-41CE-B156-EFBBC35C4C0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodefoxx.Pheme.Teams", "Implementations\Teams\Kodefoxx.Pheme.Teams\Kodefoxx.Pheme.Teams.csproj", "{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,8 @@ Global
 		{A1A0A643-450A-4CE6-9658-BA988BAEBD95} = {A9C6DF25-708E-4C1A-8F59-4D57BC6E9A0E}
 		{C66A6743-0A59-4DA7-8A8F-5F5DB7DAEA90} = {E69218F6-6A6E-42E6-8E4A-DAD421B4D60D}
 		{E69218F6-6A6E-42E6-8E4A-DAD421B4D60D} = {A1A0A643-450A-4CE6-9658-BA988BAEBD95}
+		{2415F7D5-0E0B-41CE-B156-EFBBC35C4C0E} = {A1A0A643-450A-4CE6-9658-BA988BAEBD95}
+		{4861B2D7-31EF-4AF8-8BC2-F6C601ADD07F} = {2415F7D5-0E0B-41CE-B156-EFBBC35C4C0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7D0F1A4-673B-4AC3-80E0-B35E56109A73}

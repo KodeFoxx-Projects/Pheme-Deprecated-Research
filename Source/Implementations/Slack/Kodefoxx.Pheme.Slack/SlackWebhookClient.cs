@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace Kodefoxx.Pheme.Slack
 {
     /// <summary>
-    /// The implementation for communication to slack via a webhook.
+    /// The implementation for communication to slack via a web hook.
     /// For more info, see: https://api.slack.com/incoming-webhooks.
     /// </summary>
     public sealed class SlackWebHookClient

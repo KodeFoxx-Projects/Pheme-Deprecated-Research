@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Source\Implementations\Slack\Kodefoxx.Pheme.Slack\Kodefoxx.Pheme.Slack.csproj" />
+    <ProjectReference Include="..\..\..\Source\Implementations\Teams\Kodefoxx.Pheme.Teams\Kodefoxx.Pheme.Teams.csproj" />
     <ProjectReference Include="..\..\..\Source\Shared\Kodefoxx.Pheme.Shared\Kodefoxx.Pheme.Shared.csproj" />
   </ItemGroup>
 

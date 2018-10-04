@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Kodefoxx.Pheme.Teams;
 using Microsoft.Extensions.Configuration;
 
 namespace Kodefoxx.Pheme.ConsoleWriter
@@ -21,7 +22,8 @@ namespace Kodefoxx.Pheme.ConsoleWriter
         {
             var configuration = new ConfigurationBuilder()                    
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .ConfigureSlackWebHookClientOptions()                
+                .ConfigureSlackWebHookClientOptions()
+                .ConfigureTeamsWebHookClientOptions()
                 .Build()
             ;
 
@@ -43,6 +45,7 @@ namespace Kodefoxx.Pheme.ConsoleWriter
             => serviceCollection
                 .AddAndConfigureLogging()
                 .AddAndConfigureSlackWebHookTarget(() => new MessageToSlackMessageConverter(), configuration)
+                .AddAndConfigureTeamsWebHookTarget(() => new MessageToTeamsMessageConverter(), configuration)
         ;
 
         /// <summary>
